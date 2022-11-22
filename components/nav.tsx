@@ -1,7 +1,7 @@
 import { Navbar, createStyles, Group, Code } from "@mantine/core";
 import { useState } from 'react';
-import styles from "../styles/nav.module.css";
 
+import Logo from "./logo";
 
 const mockUser = {
   contact_id: "e0765790-fb13-477f-92ed-ef658effb7d8",
@@ -90,7 +90,11 @@ const Nav = () => {
       width={{
         lg: 200,
       }}>
+        <Navbar.Section style={{ width: 240, marginLeft: 'auto', marginRight: 'auto' }}>
+          <Logo/>
+        </Navbar.Section>
         <Navbar.Section >
+            
             {mockUser.first_name} {mockUser.last_name}
           <div>
             {mockUser.email}
@@ -102,12 +106,6 @@ const Nav = () => {
           </Group>
           {links}
         </Navbar.Section>
-        
-        <Navbar.Section className={classes.footer}>
-          <a href="#" className={classes.link} onClick={(event) => event.preventDefault()}>
-          
-          </a>
-      </Navbar.Section>
       </Navbar>
  
   );
