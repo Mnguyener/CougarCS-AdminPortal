@@ -86,19 +86,25 @@ const Nav = () => {
 
   return (
       <Navbar fixed={false}
-      height="100vh"
-      width={{
+        height="100vh"
+        width={{
         lg: 200,
       }}>
-        <Navbar.Section style={{ width: 240, marginLeft: 'auto', marginRight: 'auto' }}>
-          <Logo/>
+        <Navbar.Section 
+          className={classes.header}
+          >
+          {/* empty space */}
         </Navbar.Section>
-        <Navbar.Section >
-            
-            {mockUser.first_name} {mockUser.last_name}
-          <div>
-            {mockUser.email}
+          <div style={{  marginLeft: 'auto', marginRight: 'auto' }}>
+            <Logo/>
           </div>
+        <Navbar.Section>
+          <div style={{  marginTop: 30}}>
+            {mockUser.first_name} {mockUser.last_name}
+          </div>
+            <div>
+              {mockUser.email}
+            </div>
         </Navbar.Section>
         <Navbar.Section grow>
           <Group className={classes.header} position="apart">
@@ -106,8 +112,8 @@ const Nav = () => {
           </Group>
           {links}
         </Navbar.Section>
+
       </Navbar>
- 
   );
 };
 
